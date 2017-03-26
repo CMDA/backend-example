@@ -1,7 +1,7 @@
 var express = require('express');
-var request = require('request');
+var connection = require('./db');
 
-var host = 'http://dennistel.nl/movies/';
+connection.connect();
 
 express()
   .use(express.static('public'))
@@ -12,23 +12,27 @@ express()
   .listen(2000);
 
 function movies(req, res, next) {
-  request(host, function (err, response, body) {
+  connection.query('SELECT * FROM movies', done);
+
+  function done(err, data) {
     if (err) {
       next(err);
     } else {
-      res.render('index.ejs', {movies: JSON.parse(body)});
+      res.render('index.ejs', {movies: data});
       next();
     }
-  });
+  }
 }
 
 function movie(req, res, next) {
-  request(host + req.params.id, function (err, response, body) {
+  connection.query('SELECT * FROM movies WHERE id = ? LIMIT 1', req.params.id, done);
+
+  function done(err, data) {
     if (err) {
       next(err);
     } else {
-      res.render('detail.ejs', {movie: JSON.parse(body)});
+      res.render('detail.ejs', {movie: data[0]});
       next();
     }
-  });
+  }
 }
