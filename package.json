@@ -14,7 +14,13 @@
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  },
   "devDependencies": {},
-  "scripts": {}
+  "scripts": {
+    "start": "node server"
+  }
 }

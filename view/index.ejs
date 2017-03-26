@@ -1,0 +1,8 @@
+<% include head.ejs %>
+<h1>Movies</h1>
+<% for (var index = 0; index < movies.length; index++) {%>
+<a class="block-movie" href="/<%= movies[index].id%>">
+  <h2><%= movies[index].title %></h2>
+  <p><%= movies[index].plot %></p>
+</a>
+<% } %>
