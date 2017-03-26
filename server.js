@@ -12,6 +12,7 @@ express()
   .get('/', movies)
   .post('/', add)
   .get('/:id', movie)
+  .delete('/:id', remove)
   .listen(2000);
 
 function movies(req, res, next) {
@@ -34,7 +35,7 @@ function movie(req, res, next) {
     if (err) {
       next(err);
     } else {
-      res.render('detail.ejs', {movie: data[0]});
+      res.render('detail.ejs', {movie: data[0] || {}});
       next();
     }
   }
@@ -54,6 +55,19 @@ function add(req, res, next) {
       next(err);
     } else {
       res.redirect('/' + data.insertId);
+      next();
+    }
+  }
+}
+
+function remove(req, res, next) {
+  connection.query('DELETE FROM movies WHERE id = ?', req.params.id, done);
+
+  function done(err) {
+    if (err) {
+      next(err);
+    } else {
+      res.end('OK');
       next();
     }
   }

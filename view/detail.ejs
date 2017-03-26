@@ -2,5 +2,7 @@
 <h1><%= movie.title %></h1>
 <p><%= movie.description %></p>
 <p class="intent">
+  <button id="js-remove" data-id="<%= movie.id %>" class="dangerous">Remove</button>
   <a href="/">Back to list</a>
 </p>
+<% include tail.ejs %>

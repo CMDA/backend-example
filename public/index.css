@@ -16,6 +16,10 @@ body {
   box-sizing: border-box;
 }
 
+.dangerous {
+  color: hsl(0, 100%, 39%);
+}
+
 h1, h2 {
   font-weight: lighter;
   margin-top: 1em;
@@ -64,6 +68,10 @@ a:hover {
   text-align: center;
 }
 
+.intent > * {
+  display: block;
+}
+
 label {
   display: block;
   width: 100%;
@@ -88,5 +96,10 @@ button {
   padding: 0.25em 1em;
   border-width: 0;
   background-color: hsla(202, 100%, 39%, 1);
+  color: white;
+}
+
+button.dangerous {
+  background-color: hsl(0, 100%, 39%);
   color: white;
 }
