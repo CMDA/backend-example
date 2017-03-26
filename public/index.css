@@ -1,5 +1,6 @@
-html {
+html, input, textarea, button {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+  font-size: 1em;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
 
 * {
   line-height: calc(1em + 1ex);
+  box-sizing: border-box;
 }
 
 h1, h2 {
@@ -56,4 +58,35 @@ a:hover {
 
 .block-movie > :last-child {
   margin-bottom: 0;
+}
+
+.intent {
+  text-align: center;
+}
+
+label {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+}
+
+input, textarea, button {
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  padding: 0;
+  margin: 0;
+}
+
+input, textarea {
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+button {
+  margin: 1em 0;
+  padding: 0.25em 1em;
+  border-width: 0;
+  background-color: hsla(202, 100%, 39%, 1);
+  color: white;
 }
