@@ -19,8 +19,15 @@
     "express": "^4.15.2",
     "request": "^2.81.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "xo": "^0.18.0"
+  },
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "lint": "xo"
+  },
+  "xo": {
+    "space": true,
+    "esnext": false
   }
 }

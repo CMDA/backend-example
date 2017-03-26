@@ -1,6 +1,7 @@
-var express = require('express')
-var request = require('request')
-var host = 'http://dennistel.nl/movies/'
+var express = require('express');
+var request = require('request');
+
+var host = 'http://dennistel.nl/movies/';
 
 express()
   .use(express.static('public'))
@@ -8,7 +9,7 @@ express()
   .set('views', 'view')
   .get('/', movies)
   .get('/:id', movie)
-  .listen(2000)
+  .listen(2000);
 
 function movies(req, res, next) {
   request(host, function (err, response, body) {
