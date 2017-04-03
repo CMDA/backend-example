@@ -2,7 +2,7 @@
   "name": "backend-example",
   "private": true,
   "version": "1.0.0",
-  "description": "Example with a mysql database, simple front-end, and a Node API & server",
+  "description": "Example for backend with a mysql database, simple front-end, and a Node server",
   "license": "MIT",
   "keywords": [
     "mysql",

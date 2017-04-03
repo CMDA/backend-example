@@ -1,5 +1,7 @@
 # backend-example
 
+Example with a mysql database, simple front-end, and a Node server.
+
 ## Install
 
 Install the project:
@@ -10,7 +12,7 @@ cd backend-example
 npm install
 ```
 
-You also need [mysql][], of course. I did the following on my mac with [homebrew][]:
+You also need [mysql][], of course. I did the following on OS X with [homebrew][]:
 
 ```sh
 brew install mysql
